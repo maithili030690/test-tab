@@ -1,0 +1,55 @@
+<!-- <header class="bg-success text-white p-2 my-4"><h3>ngIf p</h3></header>
+
+<p class="alert alert-info my-4"
+*ngIf="val==5"
+>
+    <strong>1:</strong>
+   The value is 5
+</p>
+<p class="alert alert-info my-4"
+*ngIf="val==10"
+>
+    <strong>1:</strong>
+   The value is 10
+</p>
+<p class="alert alert-info my-4"
+*ngIf="val==15"
+>
+    <strong>1:</strong>
+   The value is 15
+</p>
+<p class="alert alert-info my-4"
+*ngIf="val !== 5 && val !==10 && val !==15  "
+>
+    <strong>1:</strong>
+   The value is anything
+</p> -->
+
+
+<header class="bg-success text-white p-2 my-4"><h3>ngSwitch p</h3></header>
+<div [ngSwitch]="val">
+    <p class="alert alert-info my-4"
+    *ngSwitchCase="5"
+    >
+        <strong>1:</strong>
+       The value is 5
+    </p>
+    <p class="alert alert-info my-4"
+    *ngSwitch="10"
+    >
+        <strong>1:</strong>
+       The value is 10
+    </p>
+    <p class="alert alert-info my-4"
+    *ngSwitchCase="15"
+    >
+        <strong>1:</strong>
+       The value is 15
+    </p>
+    <p class="alert alert-info my-4"
+   *ngSwitchDefault
+    >
+        <strong>1:</strong>
+       The value is anything
+    </p>
+</div>

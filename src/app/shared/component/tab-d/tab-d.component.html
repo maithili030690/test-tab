@@ -1,0 +1,46 @@
+<header class="bg-success text-white p-2 my-4"><h3>tab by using directives</h3></header>
+
+<ul class="nav nav-pills my-4">
+    <li class="nav-item"
+    (click)="onTabClick('angular')"
+    >
+        <a href="javascript:;" class="nav-link"
+        [ngClass]="{
+            'active':selectedFrameWork.toLowerCase().includes('angular')
+        }"
+        >Angular</a>
+    </li>
+    <li class="nav-item"
+    (click)="onTabClick('react')"
+    >
+        <a href="javascript:;" class="nav-link"
+        [class.active]="selectedFrameWork.toLowerCase().includes('react')"
+        >React</a>
+    </li>
+    <li class="nav-item"
+    (click)="onTabClick('vue')"
+    >
+        <a href="javascript:;" class="nav-link"
+        [ngClass]="{
+            'active':selectedFrameWork.toLowerCase().includes('vue')
+        }"
+        >Vue</a>
+    </li>
+</ul>
+
+<div class="tab-content">
+    <div class="card">
+        <div class="card-body" *ngIf="selectedFrameWork.toLowerCase().includes('angular')">
+            <strong>Angular</strong>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Beatae alias vel illo quisquam laborum quis inventore consequatur et molestias eaque.
+        </div>
+        <div class="card-body"  *ngIf="selectedFrameWork.toLowerCase().includes('react')">
+            <strong>React</strong>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. At accusantium recusandae excepturi id tempore unde velit dolorem laudantium nisi corrupti!
+        </div>
+        <div class="card-body"  *ngIf="selectedFrameWork.toLowerCase().includes('vue')">
+            <strong>Vue</strong>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid ratione aspernatur veniam a saepe reprehenderit! Adipisci ex distinctio consequuntur? Rem.
+        </div>
+    </div>
+</div>

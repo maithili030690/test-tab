@@ -1,0 +1,23 @@
+<header class="bg-success text-white p-2 my-4"><h3>tab by using ngswitch with ngfor</h3></header>
+
+
+<ul class="nav nav-pills my-4">
+    <li class="nav-item" 
+    *ngFor="let tab of tabArr"
+    (click)="onTabClick(tab.frameWorkName)"
+    >
+        <a href="javascript:;" class="nav-link"
+        [ngClass]="{
+            'active':selectedFrameWork.toLowerCase().includes(tab.frameWorkName)
+        }">{{tab.tabTitle}}</a>
+    </li>
+</ul>
+<div class="tab-content">
+    <div class="card"[ngSwitch]="selectedFrameWork">
+        <ng-container *ngFor="let tab of tabArr">
+        <div class="card-body" *ngSwitchCase="tab.frameWorkName"
+        [innerHTML]="tab.tabContent">    
+        </div>
+    </ng-container>
+    </div>
+</div>     
